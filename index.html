@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Model E-Learning School</title>
+    <link rel="icon" href="./assets/images/white-logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getAnalytics ,googleAuthProvider ,signInWithPopup} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCXGc3o-TqQel2M3N-XtGTJQBovB2SYiEE",
+      authDomain: "model-el.firebaseapp.com",
+      projectId: "model-el",
+      storageBucket: "model-el.appspot.com",
+      messagingSenderId: "130594691540",
+      appId: "1:130594691540:web:cf207e37bdf94270479e41",
+      measurementId: "G-3TEPRXKVRD"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+auth.languageCode = 'en';
+    const analytics = getAnalytics(app);
+    import { GoogleAuthProvider } from "firebase/auth";
+  const provider = new GoogleAuthProvider();
+  count.googleLogin = document.getElementById('icon_title');
+  googleLogin.addEventListener("click" ,function(){
+    const auth = getAuth();
+   signInWithPopup(auth, provider)
+    .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log(user)
+    window.location.href = "../logged.html"
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    const email = error.customData.email;
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+  } )
+  </script>
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+             <b>Model E-Learning</b> 
+            </a>
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">model ai</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#pricing">book and libreary</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">Contact and About us</a></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+      <span class="header_title">Login</span>
+      <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+  
+    <section class="popupBody">
+      <!-- Login -->
+      <div class="social_login">
+        <div class="">
+          <a href="javascript:void(0)" class="social_box fb" onclick="facebookSignIn()">
+            <span class="icon"><i class="fab fa-facebook"></i></span>
+            <span class="icon_title">Connect with Facebook</span>
+          </a>
+  
+          <a href="javascript:void(0)" id="icon_title" class="social_box google" onclick="googleSignIn()">
+            <span class="icon"><i class="fab fa-google-plus"></i></span>
+            <span id="icon_title" class="icon_title">Connect with Google</span>
+          </a>
+        </div>
+  
+        <div class="centeredText">
+          <span>Or use your Email address</span>
+        </div>
+  
+        <div class="action_btns">
+          <div class="one_half"><a href="javascript:void(0)" id="login_form" class="btn" onclick="login()">Login</a></div>
+          <div class="one_half last"><a href="javascript:void(0)" id="register_form" class="btn" onclick="register()">Sign up</a></div>
+        </div>
+      </div>
+  
+      <!-- Username & Password Login form -->
+      <div class="user_login">
+        <form onsubmit="login(); return false;">
+          <label>Email / Username</label>
+          <input type="text" id="login-email" required/>
+          <br />
+  
+          <label>Password</label>
+          <input type="password" id="login-password" required/>
+          <br />
+  
+          <div class="checkbox">
+            <input id="remember" type="checkbox" />
+            <label for="remember">Remember me on this computer</label>
+          </div>
+  
+          <div class="action_btns">
+            <div class="one_half"><a href="javascript:void(0)" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+            <div class="one_half last"><button type="submit" class="btn btn_red">Login</button></div>
+          </div>
+        </form>
+  
+        <a href="javascript:void(0)" class="forgot_password">Forgot password?</a>
+      </div>
+  
+      <!-- Register Form -->
+      <div class="user_register">
+        <form onsubmit="register(); return false;">
+          <label>Full Name</label>
+          <input type="text" id="register-name" required/>
+          <br />
+  
+          <label>Email Address</label>
+          <input type="email" id="register-email" required/>
+          <br />
+  
+          <label>Password</label>
+          <input type="password" id="register-password" required/>
+          <br />
+  
+          <div class="checkbox">
+            <input id="send_updates" type="checkbox" />
+            <label for="send_updates">Send me occasional email updates</label>
+          </div>
+  
+          <div class="action_btns">
+            <div class="one_half"><a href="javascript:void(0)" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+            <div class="one_half last"><button type="submit" class="btn btn_red">Register</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+  
+  <script>
+    // Google Sign-In Function
+    function googleSignIn() {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          console.log("Google Sign-In successful. User:", result.user);
+          document.getElementById("modal").style.display = "none";
+        })
+        .catch((error) => {
+          console.error("Google Sign-In error:", error.message);
+        });
+    }
+  
+    // Facebook Sign-In Function
+    function facebookSignIn() {
+      var provider = new firebase.auth.FacebookAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          console.log("Facebook Sign-In successful. User:", result.user);
+          document.getElementById("modal").style.display = "none";
+        })
+        .catch((error) => {
+          console.error("Facebook Sign-In error:", error.message);
+        });
+    }
+  
+    // Username & Password Login
+    function login() {
+      var email = document.getElementById("login-email").value;
+      var password = document.getElementById("login-password").value;
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log("Email/Password Sign-In successful. User:", userCredential.user);
+          document.getElementById("modal").style.display = "none";
+        })
+        .catch((error) => {
+          console.error("Email/Password Sign-In error:", error.message);
+        });
+    }
+  
+    // Register Function
+    function register() {
+      var email = document.getElementById("register-email").value;
+      var password = document.getElementById("register-password").value;
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log("Registration successful. User:", userCredential.user);
+          document.getElementById("modal").style.display = "none";
+        })
+        .catch((error) => {
+          console.error("Registration error:", error.message);
+        });
+    }
+  
+    // Monitor Auth State
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("User is signed in:", user);
+        document.getElementById("modal").style.display = "none";
+      } else {
+        console.log("No user is signed in.");
+        document.getElementById("modal").style.display = "block";
+      }
+    });
+  </script>
+  
+
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Welcome to Model E-learning Website Platform  </h2>
+                    <p></p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="#contact">free from anything </a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="#contact">full based on new curriclum </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Amazing <em> AI Services &amp; Features</em> for you</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>If you need the assistance for your questions, <a rel="nofollow" href="" target="_blank">Model AI</a> is here to assist you. If you need to get it please , click the following links  <a href="" target="_parent">get them</a> in free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <h4>Full AI</h4>
+            <p>Our AI is ready to assist you for your home work , assignment and etc if you need click here</p>
+            <div class="text-button">
+              <a href="#">Visit <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <h4>text</h4>
+            <p>Our AI can assist any kind of questions by inputing text and it repleys in text.</p>
+            <div class="text-button">
+              <a href="#">Visit <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"></div>
+            <h4>voice</h4>
+            <p>If you need talk with  <a rel="nofollow" href="" target="_blank">Model AI</a>it is ready talk with</p>
+            <div class="text-button">
+              <a href="#">visit <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"></div>
+            <h4>face recognition</h4>
+            <p>Our Website is know your face by using of it face recognition</p>
+            <div class="text-button">
+              <a href="#modal">Register <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>we are students in model and eas we work together to build a full accessed website  we work on </p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Full-stack Developers</a></h4>
+                <p>We are full-stack Developers and programmers </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">24/7 online&amp; open service</a></h4>
+                <p>Get us any time</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Creator of a lot of Websites</a></h4>
+                <p>We created a lot of websites like school portofolio,amharic keyboard,amharic text to speech and etc</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Simple but beautififull designing</a></h4>
+                <p>We design like pro but simple and understandable</p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p>To Contact Us and Support You can Get Our Telegram </p>
+              <div class="gradient-button">
+                <a href="https://t.me/mrrobi0">Telegram Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="assets/images/about-right-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clients" class="the-clients">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Check What <em>The Developers Say</em> About This Website</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Giving Some Advise on using of this Website</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-7 align-self-center">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Robera Kassaye</h4>
+                            <span class="date"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">full stack Developer</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.8</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Yafet Tadele</h4>
+                            <span class="date"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Graphics Designer </span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.7</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Kidus Bezuneh</h4>
+                            <span class="date"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Data Scientist</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">3.9</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Biniyam wondimu</h4>
+                            <span class="date"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Web Development</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-5">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“I saw E-learning Websites but they reqiures some purchases but I created this Website free, no ads ,problem solver and Full access.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/client-image.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Robera Kassaye</h4>
+                                  <span>full stack web developer</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“We was thinking About this designing finally we created this designing simple but Beautiful Especially Medititation page designing is wow ”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/yafet.png" alt="">
+                                <div class="right-content">
+                                  <h4>Yafet Tadele</h4>
+                                  <span class="category">Graphics Designer</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“When i saw the ai i was shocked b/c in other website you get this version either payment or in another countries model ai is amazing wow!”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/kidus.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>kidus bezuneh</h4>
+                                  <span>Data Scientist</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“To build this type of Website it requires at least 2 month but it was finished in 2 weeks i was amazed b/c it is full accessing website wow”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/biniy.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Biniyam wondimu</h4>
+                                  <span>Web developer</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“The true sign of inteionlligence is not knowledge but imaginat”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/baba" alt="">
+                                <div class="right-content">
+                                  <h4>Biniyam wondimu</h4>
+                                  <span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>We Have All TextBook and exam as <em>Downloadable</em> You Can Get free</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+              <p>please click download now button to get all </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">G9</span>
+            <h4>Grade 9 student book</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href="books&lib.html"><li>Grade 9 All TextBook in PDF</li></a>
+             
+            </ul>
+            <div class="border-button">
+              <a href="books&lib.html">Download Now!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">En</span>
+            <h4>Enterance Exams </h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href="books&lib.html"><li>All enterance exams in New curriclum</li></a>     
+            </ul>
+            <div class="border-button">
+              <a href="books&lib.html">Download Now!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">G12</span>
+            <h4>Grade 12 text book</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href="books&lib.html"><li>Grade 12 All TextBook in PDF</li></a>
+            </ul>
+            <div class="border-button">
+              <a href="books&lib.html">Download Now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                 <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxjfrlrVRxnkxSXPHsmQDGKJZQZVrrgSHgcbQqDDJfHwCKKXtqhBHJnMVgXWJhnClmCWpn"><button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button></a> 
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Contact Us</h4>
+            <p>Robera Kassaye - Full-stack , Negele Arsi</p>
+            <p><a href="#">+251901539529</a></p>
+            <p><a href="#">roberakassaye@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+            </ul>
+            <ul>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="https://t.me/modelelearning">Telegram Channel</a></li>
+              <li><a href="https://x.com/@fullstack112">X or twitter</a></li>
+              <li><a href="https://www.facebook.com/mrrobera.kassaye">Facebook</a></li>
+              <li><a href="https://github.com/mrrobot0047/modal">Github</a></li>
+              <li><a href="https://www.tiktok.com/@fullstack.web.developer">Tiktok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>About Our Company</h4>
+            <div class="logo">
+              <img src="assets/images/white-logo.png" alt="">
+            </div>
+            <p>This is a educational Website helps you to get books, exams and ai assist for your problem is difference is you can free your mind from anything study freely.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p
+          <br>Model <a href="#" target="_blank" title="css templates">E-learning Website @2024</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>

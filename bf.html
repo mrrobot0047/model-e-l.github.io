@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Study</title>
+    <link rel="icon" href="./assets/images/white-logo.png" type="image/png">
+
+    <!-- Link to Style CSS -->
+    <link rel="stylesheet" href="./meditation/bf.css">
+</head>
+<body>
+
+    <header>
+        <a href="medit.html"> <img src="./assets/images/white-logo.png" alt="Logo" class="logo"></a>
+        <h1>Do This Before Studying</h1>
+    </header>
+
+    <main>
+        <section class="video-container">
+            <div class="video-playlist-1">
+                <iframe 
+                    src="https://www.youtube.com/embed/sbTpwEmtkWg?si=zJVNalcJdulRNRsee" 
+                    frameborder="0" 
+                    allowfullscreen
+                    title="Mayo Clinic Mindful Study Breaks – Shoulders & Upper Body">
+                </iframe>
+                <h2>Mayo Clinic Mindful Study Breaks – Shoulders & Upper Body</h2>
+            </div>
+        </section>
+
+        <section class="playlist-selector">
+            <h4>Videos Playlist</h4>
+        
+            <button class="select-video active" id="selectVideo1" onclick="changeVideo(this, 'https://www.youtube.com/embed/1upPDwY5-U4', 'Study Tools');">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2HiYAHoMKhn5iLcMIE128XURlGTEtmBkZXA&s" alt="Study Tools">
+                <h3>Study Tools</h3>
+            </button>
+        
+            <button class="select-video" id="selectVideo2" onclick="changeVideo(this, 'https://www.youtube.com/embed/JI2K1czfZqs', 'Funny Video😂');">
+                <img src="https://play-lh.googleusercontent.com/lWQK2bf3QeRAFd7vVxRbdnxa9dRUpHbaJSGiSnWUCv-tybyOEIBPd63K-PPOsI7qD5w" alt="Funny Video">
+                <h3>Funny Video For Relax 🤣🤣</h3>
+            </button>
+            <button class="select-video" id="selectVideo2" onclick="changeVideo(this, 'https://www.youtube.com/embed/sbTpwEmtkWg?si=zJVNalcJdulRNRsee', 'Mayo Clinic Mindful Study Breaks – Shoulders & Upper Body');">
+                <img src="https://www.brainscape.com/academy/content/images/2020/07/Brain-lifting-weights.png" alt="Funny Video">
+                <h3>Mayo Clinic Mindful Study Breaks – Shoulders & Upper Body</h3>
+            </button>
+        </section>
+        
+    </main>
+
+    <!-- Link to Script JS -->
+    <script src="./meditation/bf.js"></script>
+</body>
+</html>

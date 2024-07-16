@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Model E-Learning School</title>
+    <link rel="icon" href="./assets/images/white-logo.png" type="image/png">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCXGc3o-TqQel2M3N-XtGTJQBovB2SYiEE",
+      authDomain: "model-el.firebaseapp.com",
+      projectId: "model-el",
+      storageBucket: "model-el.appspot.com",
+      messagingSenderId: "130594691540",
+      appId: "1:130594691540:web:cf207e37bdf94270479e41",
+      measurementId: "G-3TEPRXKVRD"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+             <b>Model E-Learning</b> 
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">model ai</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#pricing">book and libreary</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">mediation</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">virtual lab</a></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <label>Email / Username</label>
+                <input type="text" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <label>Full Name</label>
+                <input type="text" />
+                <br />
+
+                <label>Email Address</label>
+                <input type="email" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox" />
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+  
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>We Have in all acadamic books <em>click links to download</em>  You Can Get all in here</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>There is Books from Grade 9-12</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">G12</span>
+            <h4>Grade 12 text book</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              Grade 12 Natural Scince Textbook
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-physics_fetena_net_4c93.pdf"><li>physics</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-agriculture_fetena_net_e1e8.pdf"><li>agriculture</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-mathematics_fetena_net_4853.pdf"><li>maths</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-biology_fetena_net_987f.pdf"><li>Biology</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-chemistry_fetena_net_ef88.pdf"><li>chemistry</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-ict_fetena_net_fc95.pdf"><li>ict</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-english_fetena_net_a7d0.pdf"><li>english</li></a>
+              Grade 12 Social Science Textbook
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-geography_fetena_net_6472.pdf"><li>Geography</li></a>
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-history_fetena_net_0ee1.pdf"><li>History</li></a> 
+              <a href="https://fetena.net/books_asset/books_29/collection/grade%2012-economics_fetena_net_7ff1.pdf"><li>Economics</li></a>         
+              <a href="https://fetena.net/books_asset/books_29/collection/general%20business_fetena_net_e628.pdf"><li>General Business</li></a>         
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">G11</span>
+            <h4>Grade 11 text bok</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              Grade 11 Natural Scince Textbook
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-physics_fetena_net_e906.pdf"><li>physics</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-mathematics_fetena_net_67b9.pdf"><li>maths</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-biology_fetena_net_c646.pdf"><li>Biology</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-chemistry_fetena_net_5883.pdf"><li>chemistry</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-ict_fetena_net_c954.pdf"><li>ict</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-english_fetena_net_2b7b.pdf"><li>english</li></a>
+               <a href="https://fetena.net/books_asset/books_28/collection/civics%20and%20ethical%20education_fetena_net_4e59.pdf"><li>citizenship</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-agriculture_fetena_net_48cc.pdf"><li>agriculture</li></a>
+              Grade 11 Social Science Textbook
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-geography_fetena_net_34b3.pdf"><li>geography</li></a>
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-history_fetena_net_2728.pdf"><li>history</li></a> 
+              <a href="https://fetena.net/books_asset/books_28/collection/grade%2011-economics_fetena_net_6f71.pdf"><li>economics</li></a>         
+              <a href="https://fetena.net/books_asset/books_28/collection/general%20business_fetena_net_e2df.pdf"><li>General Business</li></a>         
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">G10</span>
+            <h4>Grade 10 text book</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-physics_fetena_net_1b5e.pdf"><li>physics</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-mathematics_fetena_net_6731.pdf"><li>maths</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-biology_fetena_net_5ecf.pdf"><li>Biology</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-chemistry_fetena_net_5f24.pdf"><li>chemistry</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-ict_fetena_net_c905.pdf"><li>ict</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-amharic_fetena_net_1096.pdf"><li>amharic</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-english_fetena_net_57cc.pdf"><li>english</li></a>
+              <a href="#"><li>A/oromo</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-geography_fetena_net_68b5.pdf"><li>geography</li></a>
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-history_fetena_net_3957.pdf"><li>history</li></a> 
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-economics_fetena_net_e38f.pdf"><li>economics</li></a> 
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-health%20and%20physical%20education_fetena_net_94bb.pdf"><li>phyysical education</li></a> 
+              <a href="https://fetena.net/books_asset/books_27/collection/grade%2010-citizenship%20education_fetena_net_fc96.pdf"><li>citizenship</li></a>
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">G9</span>
+            <h4>Grade 9 student book</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-physics_fetena_net_aabb.pdf"><li>physics</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-mathematics_fetena_net_d3e7.pdf"><li>maths</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-biology_fetena_net_ffbb.pdf"><li>Biology</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-chemistry_fetena_net_7bd1.pdf"><li>chemistry</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-ict_fetena_net_408d.pdf"><li>ict</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-health%20and%20physical%20education_fetena_net_767c.pdf"><li>phyysical education</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-english_fetena_net_0d1b.pdf"><li>english</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-amharic_fetena_net_a077.pdf"><li>amharic</li></a>
+              <a href=""><li>A/oromo</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-geography_fetena_net_e7de.pdf"><li>geography</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-history_fetena_net_bd0b.pdf"><li>history</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-economics_fetena_net_223e.pdf"><li>Economics</li></a>
+              <a href="https://fetena.net/books_asset/books_26/collection/grade%209-citizenship%20education_fetena_net_3c2e.pdf"><li>citizenship</li></a>
+              
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>We Have The Exams <em>IN PDF</em> You Can Get it </h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>There is an EEUE or entrance exam, Remidial exam & Altitude sat Exam. You Can <em>Download</em>it</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">R-E</span>
+            <h4>  Remidial Exams</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              Natural Science 
+              <a href=""><li>physics</li></a>
+              <a href=""><li>maths</li></a>
+              <a href=""><li>Biology</li></a>
+              <a href=""><li>chemistry</li></a>
+              <a href=""><li>ict</li></a>
+              <a href=""><li>english</li></a>
+              Social Science
+              <a href=""><li>geography</li></a>
+              <a href=""><li>history</li></a> 
+              <a href=""><li>economics</li></a>         
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">En-E</span>
+            <h4>Entrance Exams</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              Natural Science 
+              <a href=""><li>physics</li></a>
+              <a href=""><li>maths</li></a>
+              <a href=""><li>Biology</li></a>
+              <a href=""><li>chemistry</li></a>
+              <a href=""><li>ict</li></a>
+              <a href=""><li>english</li></a>
+              Social Science
+              <a href=""><li>geography</li></a>
+              <a href=""><li>history</li></a> 
+              <a href=""><li>economics</li></a>         
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">SAT</span>
+            <h4>SAT TOFL and etc</h4>
+            <div class="icon">
+              <img src="assets/images/slider-dec.png" alt="">
+            </div>
+            <ul>
+              <a href=""><li>Alitude English</li></a>
+              <a href=""><li>Alitude Maths</li></a>
+              <a href=""><li>International SAT</li></a>
+              <a href=""><li>TOFL</li></a>
+              <a href=""><li>IEFLS</li></a>
+              
+            </ul>
+            <div class="border-button">
+              <a href="https://t.me/modelelearning">Get all in Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div id="services1" class="services1 section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Amazing <em> our Services &amp; Features</em> for you</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>If you confused and stressed<a rel="nofollow" href="" target="_blank">Mediation & Vitrual Labs</a> is here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <h4>Mediation</h4>
+            <p>If You stressed & dipressed please click here there is Amazing things to focus and set free mind</p>
+            <div class="text-button">
+              <a href="medit.html">Visit <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <h4>virtual Labs</h4>
+            <p>You can here get all of labs in virtual you will undertsand anything in simply</p>
+            <div class="text-button">
+              <a href="https://phet.colorado.edu/en/simulations/filter?type=html">Visit <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+  
+ 
+
+        <footer id="newsletter">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading">
+                  <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+                </div>
+              </div>
+              <div class="col-lg-6 offset-lg-3">
+                <form id="search" action="#" method="GET">
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                      <fieldset>
+                        <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                      <fieldset>
+                       <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxjfrlrVRxnkxSXPHsmQDGKJZQZVrrgSHgcbQqDDJfHwCKKXtqhBHJnMVgXWJhnClmCWpn"><button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button></a> 
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="footer-widget">
+                  <h4>Contact Us</h4>
+                  <p>Robera Kassaye - Full-stack , Negele Arsi</p>
+                  <p><a href="#">+251901539529</a></p>
+                  <p><a href="#">roberakassaye@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="footer-widget">
+                  <h4>About Us</h4>
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                  </ul>
+                  <ul>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="footer-widget">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><a href="https://t.me/modelelearning">Telegram Channel</a></li>
+                    <li><a href="#">X or twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+        
+                  </ul>
+                  <ul>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Tiktok</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="footer-widget">
+                  <h4>About Our Company</h4>
+                  <div class="logo">
+                    <img src="assets/images/white-logo.png" alt="">
+                  </div>
+                  <p>This is a educational Website helps you to get books, exams and ai assist for your problem is difference is you can free your mind from anything study freely.</p>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="copyright-text">
+                  <p
+                <br>Model <a href="#" target="_blank" title="css templates">E-learning Website @2024</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      
+      
+        <!-- Scripts -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/animation.js"></script>
+        <script src="assets/js/imagesloaded.js"></script>
+        <script src="assets/js/popup.js"></script>
+        <script src="assets/js/custom.js"></script>
+      </body>
+      </html>
